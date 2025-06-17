@@ -44,7 +44,6 @@ Absolutely! Here’s a polished, professional `README.md` for your project — n
 
 ## 📂 Folder Structure
 
-```
 
 FeedMod/
 ├── backend/
@@ -58,7 +57,6 @@ FeedMod/
 │   └── script.js
 └── README.md
 
-```
 
 ---
 
