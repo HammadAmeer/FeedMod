@@ -58,7 +58,7 @@ FeedMod/
 │   └── script.js
 └── README.md
 
-````
+```
 
 ---
 
@@ -113,9 +113,3 @@ Use Live Server (VS Code extension) or simply double-click to open in browser.
 
 MIT License © 2025 [Hammad Ameer](https://www.linkedin.com/in/hammad-ameer/)
 
-```
-
----
-
-Let me know if you'd like the [screenshots section removed](f), a [logo/banner for GitHub](f), or a [deployment-ready version](f).
-```
