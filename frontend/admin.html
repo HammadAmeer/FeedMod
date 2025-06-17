@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Panel</title>
+</head>
+<body>
+  <h2>Pending Feedback</h2>
+  <ul id="pending-list"></ul>
+
+  <script>
+    const list = document.getElementById("pending-list");
+
+    async function fetchPending() {
+      const res = await fetch("http://127.0.0.1:8000/admin/pending");
+      const data = await res.json();
+
+      list.innerHTML = "";
+        data.forEach((item) => {
+        const li = document.createElement("li");
+        li.innerHTML = `${item.message} 
+            <button onclick="moderate(${item.id}, 'approve')">✅</button>
+            <button onclick="moderate(${item.id}, 'reject')">❌</button>`;
+        list.appendChild(li);
+        });
+    }
+
+    async function moderate(id, action) {
+      await fetch(`http://127.0.0.1:8000/admin/moderate/${id}?action=${action}`, {
+        method: "POST"
+      });
+      fetchPending();
+    }
+
+    fetchPending();
+    setInterval(fetchPending, 3000);
+  </script>
+</body>
+</html>
